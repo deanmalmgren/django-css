@@ -11,6 +11,7 @@ ABSOLUTE_CSS_URLS = getattr(settings, 'COMPRESS_ABSOLUTE_CSS_URLS', True)
 COMPRESS_CSS_FILTERS = list(getattr(settings, 'COMPRESS_CSS_FILTERS', []))
 COMPRESS_JS_FILTERS = list(getattr(settings, 'COMPRESS_JS_FILTERS', ['compressor.filters.jsmin.JSMinFilter']))
 COMPILER_FORMATS = getattr(settings, 'COMPILER_FORMATS', {})
+COMPRESS_FORCE_RECOMPILE = getattr(settings, 'COMPRESS_FORCE_RECOMPILE', False)
 
 if ABSOLUTE_CSS_URLS and 'compressor.filters.css_default.CssAbsoluteFilter' not in COMPRESS_CSS_FILTERS:
     COMPRESS_CSS_FILTERS.insert(0, 'compressor.filters.css_default.CssAbsoluteFilter')

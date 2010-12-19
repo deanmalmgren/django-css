@@ -238,6 +238,8 @@ class CssCompressor(Compressor):
         """
         Needed for CCS Compilers, returns True when file needs recompiling
         """
+        if settings.COMPRESS_FORCE_RECOMPILE:
+            return True
         path, ext = os.path.splitext(filename)
         compiled_filename = path + '.css'
         if not os.path.exists(compiled_filename):
